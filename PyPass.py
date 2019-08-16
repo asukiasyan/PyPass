@@ -170,7 +170,7 @@ username = Entry(window, font=("Times", 15), bg='#F4F4F4')
 username.place(relx=0.97, rely=0.4, anchor='se')
 
 label_password = Label(window, text="Password", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.85, rely=0.45, anchor='se')
-password = Entry(window, font=("Times", 15), show='*', bg='#F4F4F4')
+password = Entry(window, font=("Times", 15), bg='#F4F4F4')
 password.place(relx=0.97, rely=0.5, anchor='se')
 
 label_url = Label(window, text="URL", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.81, rely=0.55, anchor='se')

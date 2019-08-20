@@ -213,7 +213,7 @@ scrollbar.place(relx=1, rely=0.21, anchor='se')
 
 scale_label = Label(window, text="Generate Password", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.28, rely=0.85, anchor='se')
 scalebar = Scale(window, from_=8, to=64, orient=HORIZONTAL, bg=backgroundColor, troughcolor=labelTextColor, highlightcolor=labelTextColor, var=scalerValue)
-scalebar.set(32)
+scalebar.set(16)
 scalebar.place(relx=0.2, rely=0.9, anchor='se')
 
 

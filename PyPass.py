@@ -38,7 +38,7 @@ class initialWindow(object):
         else:
             self.attempts += 1
             if self.attempts == 5:
-                popup.quit()
+                popup.destroy()
             self.entry.delete(0, 'end')
             messagebox.showerror('Incorrect Password', 'Incorrect password, attempts remaining: ' + str(5 - self.attempts))
 
@@ -133,7 +133,6 @@ window.title("PyPass")
 window.config(bg='#2D364B')
 window.resizable(False, False)
 
-
 title = StringVar()
 username = StringVar()
 passwd = StringVar()
@@ -150,12 +149,13 @@ label_appname = Label(window, text="PyPass Password Manager Version1.0", font=("
 label_appname = Label(window, text="Copyright PyPass 2019", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.59, rely=1, anchor='se')
 
 #====================================== Buttons ======================================
-btnAdd = Button(window, text='Add', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=addData).place(relx=0.51, rely=0.9, anchor='se')
+btnAdd = Button(window, text='Add', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=addData).place(relx=0.92, rely=0.67, anchor='se')
 btnSearch = Button(window, text='Search', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=searchData).place(relx=0.62, rely=0.9, anchor='se')
 btnDelete = Button(window, text='Delete', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=deleteData).place(relx=0.73, rely=0.9, anchor='se')
 btnUpdate = Button(window, text='Update', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=updateData).place(relx=0.84, rely=0.9, anchor='se')
 btnClose = Button(window, text='Close', highlightbackground='#2D364B', width=10, padx=1, pady=1, command=quit, relief=RIDGE).place(relx=0.95, rely=0.9, anchor='se')
 #====================================================================================
+
 
 
 separator = Frame(height=2, bd=1, relief=SUNKEN)
@@ -186,7 +186,7 @@ url.place(relx=0.97, rely=0.6, anchor='se')
 
 
 
-clear_data = Button(window, text="Clear", font=15, highlightbackground='#2D364B', command=clear).place(relx=0.91, rely=0.7, anchor='se')
+clear_data = Button(window, text="Clear", font=15, highlightbackground='#2D364B', padx=1, pady=1, width=10, command=clear).place(relx=0.51, rely=0.9, anchor='se')
 show_hide = Checkbutton(window, text="Show Database", font=15, bg='#2D364B', fg='#9ABCB7', var=checkboxValue,  command=checkbox_status)
 show_hide.place(relx=0.2, rely=0.65, anchor='se')
 
@@ -210,6 +210,7 @@ scrollbar.place(relx=1, rely=0.21, anchor='se')
 
 scale_label = Label(window, text="Generate Password", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.28, rely=0.85, anchor='se')
 scalebar = Scale(window, from_=8, to=64, orient=HORIZONTAL, bg='#2D364B', var=scalerValue)
+scalebar.set(32)
 scalebar.place(relx=0.2, rely=0.9, anchor='se')
 
 

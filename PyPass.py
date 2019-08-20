@@ -57,7 +57,7 @@ popup.mainloop()
 # ============== Global Variables ==================
 
 backgroundColor = '#222936'# '#222936'
-labelTextColor = 'gray59' # '#9ABCB7'
+labelTextColor = '#89A3BA' # '#9ABCB7'
 
 
 # ================== Functions =======================
@@ -171,19 +171,19 @@ separator.pack(fill=X, padx=5, pady=42)
 
 
 label_title = Label(window, text="Title", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.81, rely=0.25, anchor='se')
-title = Entry(window, font=("Times", 15), bg='#F4F4F4')
+title = Entry(window, font=("Times", 15), background=labelTextColor, highlightthickness=0)
 title.place(relx=0.97, rely=0.3, anchor='se')
 
 label_username = Label(window, text="Username", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.85, rely=0.35, anchor='se')
-username = Entry(window, font=("Times", 15), bg='#F4F4F4')
+username = Entry(window, font=("Times", 15), background=labelTextColor, highlightthickness=0)
 username.place(relx=0.97, rely=0.4, anchor='se')
 
 label_password = Label(window, text="Password", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.85, rely=0.45, anchor='se')
-password = Entry(window, font=("Times", 15), bg='#F4F4F4')
+password = Entry(window, font=("Times", 15), background=labelTextColor, highlightthickness=0)
 password.place(relx=0.97, rely=0.5, anchor='se')
 
 label_url = Label(window, text="URL", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.81, rely=0.55, anchor='se')
-url = Entry(window, font=("Times", 15), bg='#F4F4F4')
+url = Entry(window, font=("Times", 15), background=labelTextColor, highlightthickness=0)
 url.place(relx=0.97, rely=0.6, anchor='se')
 
 
@@ -197,11 +197,11 @@ show_hide.place(relx=0.2, rely=0.65, anchor='se')
 
 
 
-listbox = Listbox(window, background='#FFFFFF', bd=1, font="Times", fg='#000000', selectbackground="#9ABCB7", highlightcolor="Red", relief=FLAT, height=13, width=75)
+listbox = Listbox(window, background='#222936', bd=1, font="Times", fg='#89A3BA', selectbackground="#393B45", highlightcolor="Red", relief=FLAT, height=13, width=75)
 listbox.bind('<<ListboxSelect>>', record)
 listbox.place(relx=0.7, rely=0.6, anchor='se')
 
-scrollbar = Scrollbar(listbox, command=listbox.yview)
+scrollbar = Scrollbar(listbox, command=listbox.yview, bg=labelTextColor, troughcolor=labelTextColor)
 listbox.config(yscrollcommand = scrollbar.set)
 scrollbar.place(relx=1, rely=0.21, anchor='se')
 # scrollbar.grid(row=5, column=1)
@@ -212,7 +212,7 @@ scrollbar.place(relx=1, rely=0.21, anchor='se')
 
 
 scale_label = Label(window, text="Generate Password", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.28, rely=0.85, anchor='se')
-scalebar = Scale(window, from_=8, to=64, orient=HORIZONTAL, bg=backgroundColor, var=scalerValue)
+scalebar = Scale(window, from_=8, to=64, orient=HORIZONTAL, bg=backgroundColor, troughcolor=labelTextColor, highlightcolor=labelTextColor, var=scalerValue)
 scalebar.set(32)
 scalebar.place(relx=0.2, rely=0.9, anchor='se')
 

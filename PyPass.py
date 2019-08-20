@@ -182,15 +182,15 @@ url.place(relx=0.97, rely=0.6, anchor='se')
 
 clear_data = Button(window, text="Clear", font=15, highlightbackground='#2D364B', command=clear).place(relx=0.91, rely=0.7, anchor='se')
 show_hide = Checkbutton(window, text="Show Database", font=15, bg='#2D364B', fg='#9ABCB7', var=checkboxValue,  command=checkbox_status)
-show_hide.place(relx=0.2, rely=0.85, anchor='se')
+show_hide.place(relx=0.2, rely=0.65, anchor='se')
 
 # ============================ Data Frame ==========================
 
 
 
-listbox = Listbox(window, background='#FFFFFF', bd=1, font="Times", fg='#000000', selectbackground="#9ABCB7", highlightcolor="Red", relief=FLAT, height=25, width=75)
+listbox = Listbox(window, background='#FFFFFF', bd=1, font="Times", fg='#000000', selectbackground="#9ABCB7", highlightcolor="Red", relief=FLAT, height=13, width=75)
 listbox.bind('<<ListboxSelect>>', record)
-listbox.place(relx=0.7, rely=0.8, anchor='se')
+listbox.place(relx=0.7, rely=0.6, anchor='se')
 
 scrollbar = Scrollbar(listbox, command=listbox.yview)
 listbox.config(yscrollcommand = scrollbar.set)

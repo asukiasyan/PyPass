@@ -54,7 +54,10 @@ popup.mainloop()
 
 
 
+# ============== Global Variables ==================
 
+backgroundColor = '#222936'# '#222936'
+labelTextColor = 'gray59' # '#9ABCB7'
 
 
 # ================== Functions =======================
@@ -130,7 +133,7 @@ def checkbox_status():
 window = Tk()
 window.geometry("800x600")
 window.title("PyPass")
-window.config(bg='#2D364B')
+window.config(bg=backgroundColor)
 window.resizable(False, False)
 
 title = StringVar()
@@ -145,15 +148,15 @@ scalerValue = StringVar()
 
 
 
-label_appname = Label(window, text="PyPass Password Manager Version1.0", font=("Times", 20), fg='#9ABCB7', bg='#2D364B').place(relx=0.97, rely=0.08, anchor='se')
-label_appname = Label(window, text="Copyright PyPass 2019", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.59, rely=1, anchor='se')
+label_appname = Label(window, text="PyPass Password Manager Version1.0", font=("Times", 20), fg=labelTextColor, bg=backgroundColor).place(relx=0.97, rely=0.08, anchor='se')
+label_appname = Label(window, text="Copyright PyPass 2019", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.59, rely=1, anchor='se')
 
 #====================================== Buttons ======================================
-btnAdd = Button(window, text='Add', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=addData).place(relx=0.92, rely=0.67, anchor='se')
-btnSearch = Button(window, text='Search', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=searchData).place(relx=0.62, rely=0.9, anchor='se')
-btnDelete = Button(window, text='Delete', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=deleteData).place(relx=0.73, rely=0.9, anchor='se')
-btnUpdate = Button(window, text='Update', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=updateData).place(relx=0.84, rely=0.9, anchor='se')
-btnClose = Button(window, text='Close', highlightbackground='#2D364B', width=10, padx=1, pady=1, command=quit, relief=RIDGE).place(relx=0.95, rely=0.9, anchor='se')
+btnAdd = Button(window, text='Add', highlightbackground=backgroundColor, padx=1, pady=1, width=10, command=addData).place(relx=0.92, rely=0.67, anchor='se')
+btnSearch = Button(window, text='Search', highlightbackground=backgroundColor, padx=1, pady=1, width=10, command=searchData).place(relx=0.62, rely=0.9, anchor='se')
+btnDelete = Button(window, text='Delete', highlightbackground=backgroundColor, padx=1, pady=1, width=10, command=deleteData).place(relx=0.73, rely=0.9, anchor='se')
+btnUpdate = Button(window, text='Update', highlightbackground=backgroundColor, padx=1, pady=1, width=10, command=updateData).place(relx=0.84, rely=0.9, anchor='se')
+btnClose = Button(window, text='Close', highlightbackground=backgroundColor, width=10, padx=1, pady=1, command=quit, relief=RIDGE).place(relx=0.95, rely=0.9, anchor='se')
 #====================================================================================
 
 
@@ -167,27 +170,27 @@ separator.pack(fill=X, padx=5, pady=42)
 # ----------------------- Input Entry --------------------------
 
 
-label_title = Label(window, text="Title", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.81, rely=0.25, anchor='se')
+label_title = Label(window, text="Title", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.81, rely=0.25, anchor='se')
 title = Entry(window, font=("Times", 15), bg='#F4F4F4')
 title.place(relx=0.97, rely=0.3, anchor='se')
 
-label_username = Label(window, text="Username", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.85, rely=0.35, anchor='se')
+label_username = Label(window, text="Username", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.85, rely=0.35, anchor='se')
 username = Entry(window, font=("Times", 15), bg='#F4F4F4')
 username.place(relx=0.97, rely=0.4, anchor='se')
 
-label_password = Label(window, text="Password", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.85, rely=0.45, anchor='se')
+label_password = Label(window, text="Password", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.85, rely=0.45, anchor='se')
 password = Entry(window, font=("Times", 15), bg='#F4F4F4')
 password.place(relx=0.97, rely=0.5, anchor='se')
 
-label_url = Label(window, text="URL", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.81, rely=0.55, anchor='se')
+label_url = Label(window, text="URL", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.81, rely=0.55, anchor='se')
 url = Entry(window, font=("Times", 15), bg='#F4F4F4')
 url.place(relx=0.97, rely=0.6, anchor='se')
 
 
 
 
-clear_data = Button(window, text="Clear", font=15, highlightbackground='#2D364B', padx=1, pady=1, width=10, command=clear).place(relx=0.51, rely=0.9, anchor='se')
-show_hide = Checkbutton(window, text="Show Database", font=15, bg='#2D364B', fg='#9ABCB7', var=checkboxValue,  command=checkbox_status)
+clear_data = Button(window, text="Clear", font=15, highlightbackground=backgroundColor, padx=1, pady=1, width=10, command=clear).place(relx=0.51, rely=0.9, anchor='se')
+show_hide = Checkbutton(window, text="Show Database", font=15, bg=backgroundColor, fg=labelTextColor, var=checkboxValue,  command=checkbox_status)
 show_hide.place(relx=0.2, rely=0.65, anchor='se')
 
 # ============================ Data Frame ==========================
@@ -208,8 +211,8 @@ scrollbar.place(relx=1, rely=0.21, anchor='se')
 
 
 
-scale_label = Label(window, text="Generate Password", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.28, rely=0.85, anchor='se')
-scalebar = Scale(window, from_=8, to=64, orient=HORIZONTAL, bg='#2D364B', var=scalerValue)
+scale_label = Label(window, text="Generate Password", font=("Times", 15), fg=labelTextColor, bg=backgroundColor).place(relx=0.28, rely=0.85, anchor='se')
+scalebar = Scale(window, from_=8, to=64, orient=HORIZONTAL, bg=backgroundColor, var=scalerValue)
 scalebar.set(32)
 scalebar.place(relx=0.2, rely=0.9, anchor='se')
 
@@ -225,7 +228,7 @@ def scaleStatus():
     password.insert(END,newstring)
 
 
-password_lenght_btn = Button(window, text='Generate', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=scaleStatus).place(relx=0.35, rely=0.9, anchor='se')
+password_lenght_btn = Button(window, text='Generate', highlightbackground=backgroundColor, padx=1, pady=1, width=10, command=scaleStatus).place(relx=0.35, rely=0.9, anchor='se')
 
 
 

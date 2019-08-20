@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+import random
+import string
 import sys
 from tkinter import *
 from tkinter import messagebox
@@ -119,6 +122,7 @@ def checkbox_status():
     else:
         listbox.delete(0, END)
 
+
 # ===================== FrontEnd / Window Configuration =====================
 
 
@@ -135,13 +139,15 @@ username = StringVar()
 passwd = StringVar()
 url = StringVar()
 checkboxValue = BooleanVar()
+scalerValue = StringVar()
+
 
 
 
 
 
 label_appname = Label(window, text="PyPass Password Manager Version1.0", font=("Times", 20), fg='#9ABCB7', bg='#2D364B').place(relx=0.97, rely=0.08, anchor='se')
-label_appname = Label(window, text="Copyright PyPass 2019", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.55, rely=1, anchor='se')
+label_appname = Label(window, text="Copyright PyPass 2019", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.59, rely=1, anchor='se')
 
 #====================================== Buttons ======================================
 btnAdd = Button(window, text='Add', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=addData).place(relx=0.51, rely=0.9, anchor='se')
@@ -196,6 +202,30 @@ scrollbar = Scrollbar(listbox, command=listbox.yview)
 listbox.config(yscrollcommand = scrollbar.set)
 scrollbar.place(relx=1, rely=0.21, anchor='se')
 # scrollbar.grid(row=5, column=1)
+
+
+# ============================ Password Generator =================
+
+
+
+scale_label = Label(window, text="Generate Password", font=("Times", 15), fg='#9ABCB7', bg='#2D364B').place(relx=0.28, rely=0.85, anchor='se')
+scalebar = Scale(window, from_=8, to=64, orient=HORIZONTAL, bg='#2D364B', var=scalerValue)
+scalebar.place(relx=0.2, rely=0.9, anchor='se')
+
+
+def scaleStatus():
+    lenght = int(scalerValue.get())
+    newstring = ''
+    for i in range(lenght):
+        x = random.randint(0,94)
+        newstring += string.printable[x]
+
+    password.delete(0,END)
+    password.insert(END,newstring)
+
+
+password_lenght_btn = Button(window, text='Generate', highlightbackground='#2D364B', padx=1, pady=1, width=10, command=scaleStatus).place(relx=0.35, rely=0.9, anchor='se')
+
 
 
 

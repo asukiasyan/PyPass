@@ -3,9 +3,6 @@
 
 <img width="481" alt="Screenshot 2019-08-16 at 14 35 31" src="https://user-images.githubusercontent.com/23168398/63168108-83496080-c033-11e9-8111-2fc94b34e52e.png">
 
-<img width="801" alt="Screenshot 2019-08-16 at 14 37 53" src="https://user-images.githubusercontent.com/23168398/63168186-bf7cc100-c033-11e9-97be-766b3c8bb41a.png">
-
-
 
 This application has been written in Python3 with tkinter GUI library for educational purposes
 

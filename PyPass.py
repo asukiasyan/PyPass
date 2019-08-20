@@ -201,7 +201,7 @@ listbox = Listbox(window, background='#222936', bd=1, font="Times", fg='#89A3BA'
 listbox.bind('<<ListboxSelect>>', record)
 listbox.place(relx=0.7, rely=0.6, anchor='se')
 
-scrollbar = Scrollbar(listbox, command=listbox.yview, bg=labelTextColor, troughcolor=labelTextColor)
+scrollbar = Scrollbar(listbox, command=listbox.yview, bg=labelTextColor, troughcolor=labelTextColor, width=1)
 listbox.config(yscrollcommand = scrollbar.set)
 scrollbar.place(relx=1, rely=0.21, anchor='se')
 # scrollbar.grid(row=5, column=1)

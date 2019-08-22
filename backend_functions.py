@@ -17,7 +17,7 @@ def add_entry(title, username, password, url):
 def search_entry(title="", username="", password="", url=""):
     conn=sqlite3.connect("storage.db")
     cur=conn.cursor()
-    cur.execute("SELECT * FROM storage WHERE title LIKE ? OR username LIKE ? or password LIKE ? or url LIKE ?",('%' + title + '%', '%' + username + '%', '%' + password + '%', '%' + url + '%'))
+    cur.execute("SELECT * FROM storage WHERE title LIKE ? AND username LIKE ? AND password LIKE ? AND url LIKE ?",('%' + title + '%', '%' + username + '%', '%' + password + '%', '%' + url + '%'))
     rows=cur.fetchall()
     conn.close
     return rows
